@@ -86,8 +86,11 @@ OBS: OBTIVE APENAS X% DE ACERTO NESSA RESOLUÇÃO.
 
 Isso significa que a solução apresentada **não necessariamente representa a solução ideal ou definitiva** para o problema.
 
-> 💡 Caso você encontre uma solução melhor para algum exercício, sinta-se à vontade para contribuir através de um Pull Request.
+> ⚠️ Você provavelmente notará que maioria das soluções estarão com seu codigo em inglês. É um padrão você terá que se acostumar pois a maoria esmagadora dos codigos escritos e conteúdos disponíveis estão nesta lingua, então aproveite para ir se acostumando.
+
 > ⚠️ Programar é uma arte muito relativa a visão de quem produz, logo, podem existir diversas soluções para o mesmo problema.
+
+> 💡 Caso você encontre uma solução melhor para algum exercício, sinta-se à vontade para contribuir através de um Pull Request.
 
 ---
 
