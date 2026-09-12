@@ -2,7 +2,7 @@
 
 > **Objetivo:** Condicionais
 
-Os exercícios desta semana têm como objetivo principal **utililização de condicionais**, .
+Os exercícios desta semana têm como objetivo principal **utililização de condicionais**.
 
 Nesta etapa, o foco está em desenvolver familiaridade com:
 
