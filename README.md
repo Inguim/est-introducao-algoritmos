@@ -129,7 +129,7 @@ Entretanto, caso utilize algum código produzido aqui como se fosse de sua autor
 
 > ⭐ **Dê os devidos créditos a este repositório.**
 
-As soluções presentes aqui foram desenvolvidas de forma independente e **não utilizei IA para a geração dessas soluções**.
+As soluções presentes aqui foram desenvolvidas de forma independente e **não utilizei IA para a geração dessas soluções**. Em caso de utilização, será apenas para entendimento contextual de assuntos que fogem da minha área de conhecimento, como equações matemáticas complexas, cálculos especificos de determinadas áreas e afins, **não sendo utilizada para produção de código**.
 
 Além disso, as listas de **ESTUDO**, apesar de não serem obrigatórias, demandam tempo e esforço para serem resolvidas.
 
