@@ -63,7 +63,7 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 |  9  | `10_time_switch.cpp`        |  🟡 **Médio**  |
 | 10  | `13_higher_lower_avg.cpp`   |  🟡 **Médio**  |
 | 11  | `15_popularity.cpp`         |  🟡 **Médio**  |
-| 12  | `14_prime_number.cpp.cpp`   |  🟡 **Médio**  |
+| 12  | `14_prime_number.cpp`       |  🟡 **Médio**  |
 | 13  | `17_project_trajectory.cpp` |  🟡 **Médio**  |
 | 14  | `12_repeated_word.cpp`      | 🔴 **Difícil** |
 | 15  | `11_not_repeated_word.cpp`  | 🔴 **Difícil** |
