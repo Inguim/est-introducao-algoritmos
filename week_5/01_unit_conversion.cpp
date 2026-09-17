@@ -1,25 +1,27 @@
-// As rampas de acesso devem ter inclinação máxima de 8%, ou seja, rampas com inclinações acima de 8% são consideradas inadequadas. O cálculo da inclinação (dado em porcentagem) de uma rampa é dada pela seguinte equação: inclinacao = altura x 100 / base (comprimento da projeção horizontal da rampa). Crie um programa que calcule e exiba a inclinação de um acesso em um prédio formado por N rampas. Por fim, mostre quantas rampas estão adequadas (possuem inclinação menor ou igual a 8%).
-// Este programa deve conter um subprograma (função). O primeiro subprograma recebe dois números inteiros positivos como parâmetros e retorna um número float com o respectivo valor da inclinação.
+// Você foi designado para fazer um programa que converte unidades de distância, que pode ser de metros para centímetros ou vice-versa. Para isso, seu programa deve ter duas funções, uma para converter de metros para centímetros e outra para converter o inverso.
+// Cada função deve receber a distância como parâmetro (número real) e retornar a distância convertida.
+// ATENÇÃO! As funções de conversão devem ser utilizadas na função main, onde serão lidos os valores da distância e da unidade para qual a distância deve ser convertida. Na função main, depois de utilizada a função correta deverá ser mostrada na tela a distância convertida.
+// OBS: Caso seja fornecida uma unidade inválida, o programa deverá exibir a palavra ERRO como resposta.
 // Entradas:
-//     número inteiro positivo que determina a quantidade de rampas
-//     dois números inteiros positivos na mesma linha (separados por espaço), sendo o primeiro valor referente a altura (cm) e segundo valor referente a base (cm)
-// Saídas:
-//     números em ponto flutuante com as inclinações das rampas
-//     número inteiro com a quantidade de rampas com a inclinação adequada
+//     Distância (real);
+//     Unidade para qual deverá ser convertida (minúsculo, singular e sem acento)
+// Saída:
+//     Distância convertida, seguida da abreviação da unidade (m ou cm). O valor e a identificação da unidade devem estar separados.
 // Exemplo de Entrada:
-// 1
-// 70 875
+// 10
+// centimetro
 // Exemplo de Saída:
-// 8.0
-// 1
-// Exemplo de Entrada:
-// 2
-// 80 1000
-// 60 600
-// Exemplo de Saída:
-// 8.0 
-// 10.0
-// 1
+// 1000 cm
+// Exemplo de Entrada 2:
+// 250
+// metro
+// Exemplo de Saída 2:
+// 2.5 m
+// Exemplo de Entrada 3:
+// 45.7
+// VOLT
+// Exemplo de Saída 3:
+// ERRO
 #include <iostream>
 
 using namespace std;
