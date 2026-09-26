@@ -14,8 +14,13 @@ void mostrarOpcoes() {
 	cout << "6 - Sair" << endl;
 }
 
-void limparTela() {
+void imprimirMarcador() {
+    cout << "------------------------------------------------------------" << endl;
+}
+
+void limparTela(bool inserirMarcador = true) {
 	system("clear");
+    if (inserirMarcador) imprimirMarcador();
 }
 
 int gerarIdentificador() {
@@ -34,7 +39,7 @@ void adicionarPlaneta(){
 	cout << "Informe o nome do Planeta: ";
 	cin >> nome;
 	
-	cout << endl << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
+	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
 	cin >> opcao;
 	if (opcao == 1) {
 		setor = "Setor A";
@@ -42,7 +47,7 @@ void adicionarPlaneta(){
 		setor = "Setor B";
 	}
 	
-	cout << endl << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
+	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
 	cin >> opcao;
 	if (opcao == 1) {
 		partido = "República";
@@ -50,13 +55,14 @@ void adicionarPlaneta(){
 		partido = "Separatista";
 	}
 	
-	cout << endl << "Informe a localização dentro do setor (x:y)" << endl;
+	cout << "Informe a localização dentro do setor (x:y)" << endl;
 	cout << "Separe por espaços" << endl;
 	cin >> coordenada.x >> coordenada.y;
 	
-	cout << endl << "Planeta adicionado aos registros" << endl;
+    limparTela();
+	cout << "Planeta adicionado aos registros" << endl;
 	cout << "Código: " << id << endl; 
-	
+	imprimirMarcador();
 }
 
 int main(){
