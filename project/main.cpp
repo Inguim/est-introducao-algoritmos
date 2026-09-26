@@ -4,6 +4,18 @@
 
 using namespace std;
 
+struct coordenada {
+    float x;
+	float y;
+};
+struct planeta {
+    int id;
+    string nome;
+    string setor;
+    string partido;
+    coordenada localizacao;
+};
+
 void mostrarOpcoes() {
 	cout << "Bem vindo ao glossário de Planetas, informe uma operação:" << endl;
 	cout << "1 - Adicionar planeta" << endl;
@@ -28,40 +40,36 @@ int gerarIdentificador() {
 }
 
 void adicionarPlaneta(){
-	string nome, setor, partido;
-    int id = gerarIdentificador();
-	struct {
-		float x;
-		float y;
-	} coordenada;
+	planeta planeta;
+    planeta.id = gerarIdentificador();
 	int opcao;
 	
 	cout << "Informe o nome do Planeta: ";
-	cin >> nome;
+	cin >> planeta.nome;
 	
 	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
 	cin >> opcao;
 	if (opcao == 1) {
-		setor = "Setor A";
+		planeta.setor = "Setor A";
 	} else {
-		setor = "Setor B";
+		planeta.setor = "Setor B";
 	}
 	
 	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
 	cin >> opcao;
 	if (opcao == 1) {
-		partido = "República";
+		planeta.partido = "República";
 	} else {
-		partido = "Separatista";
+		planeta.partido = "Separatista";
 	}
 	
 	cout << "Informe a localização dentro do setor (x:y)" << endl;
 	cout << "Separe por espaços" << endl;
-	cin >> coordenada.x >> coordenada.y;
+	cin >> planeta.localizacao.x >> planeta.localizacao.y;
 	
     limparTela();
 	cout << "Planeta adicionado aos registros" << endl;
-	cout << "Código: " << id << endl; 
+	cout << "Código: " << planeta.id << endl; 
 	imprimirMarcador();
 }
 
