@@ -94,7 +94,7 @@ void adicionarPlaneta(){
 	}
 	
 	cout << "Informe a localização dentro do setor (x:y)" << endl;
-	cout << "Separe por espaços" << endl;
+	cout << "Apenas número inteiros e separe por espaços" << endl;
 	cin >> planeta.localizacao.x >> planeta.localizacao.y;
 
     salvarPlaneta(planeta);
