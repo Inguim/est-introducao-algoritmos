@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 using namespace std;
 
@@ -17,9 +18,13 @@ void limparTela() {
 	system("clear");
 }
 
+int gerarIdentificador() {
+    return time(NULL);
+}
 
 void adicionarPlaneta(){
 	string nome, setor, partido;
+    int id = gerarIdentificador();
 	struct {
 		float x;
 		float y;
@@ -50,7 +55,7 @@ void adicionarPlaneta(){
 	cin >> coordenada.x >> coordenada.y;
 	
 	cout << endl << "Planeta adicionado aos registros" << endl;
-	cout << "Código: " << nome << endl; 
+	cout << "Código: " << id << endl; 
 	
 }
 
