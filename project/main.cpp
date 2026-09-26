@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
+#include <fstream>
 
 using namespace std;
 
@@ -15,6 +16,10 @@ struct planeta {
     string partido;
     coordenada localizacao;
 };
+
+const string NOME_ARQUIVO_DADOS = "dados.csv";
+
+// Funçoes utilitárias
 
 void mostrarOpcoes() {
 	cout << "Bem vindo ao glossário de Planetas, informe uma operação:" << endl;
@@ -39,12 +44,29 @@ int gerarIdentificador() {
     return time(NULL);
 }
 
+// Funções para lidar com arquivos
+
+void salvarPlaneta(planeta &planeta) {
+    planeta.id = gerarIdentificador();
+
+    // ios:app -> adiciona ao final do arquivo
+    ofstream arquivo(NOME_ARQUIVO_DADOS, ios::app);
+
+    arquivo << planeta.id << "," << planeta.nome << ",";
+    arquivo << planeta.partido << "," << planeta.setor << ",";
+    arquivo << planeta.localizacao.x << "," << planeta.localizacao.y;
+    arquivo << endl;
+
+    arquivo.close();
+}
+
+// Funções de escopo
+
 void adicionarPlaneta(){
 	planeta planeta;
-    planeta.id = gerarIdentificador();
 	int opcao;
 	
-	cout << "Informe o nome do Planeta: ";
+	cout << "Informe o nome do Planeta (não utilize espaço ou ponto-vírgula): ";
 	cin >> planeta.nome;
 	
 	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
@@ -66,6 +88,8 @@ void adicionarPlaneta(){
 	cout << "Informe a localização dentro do setor (x:y)" << endl;
 	cout << "Separe por espaços" << endl;
 	cin >> planeta.localizacao.x >> planeta.localizacao.y;
+
+    salvarPlaneta(planeta);
 	
     limparTela();
 	cout << "Planeta adicionado aos registros" << endl;
