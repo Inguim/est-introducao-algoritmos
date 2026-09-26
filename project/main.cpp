@@ -109,30 +109,33 @@ void listarPlanetas() {
 	ifstream arquivo(NOME_ARQUIVO_DADOS);
 	string linha;
 
-	while (getline(arquivo, linha)) {
-		stringstream ss(linha);
-		string conteudo;
-		planeta planeta;
-		
-		getline(ss, conteudo, SEPARADOR_CSV);
-		planeta.id = stoi(conteudo);
+	if (arquivo) {
+		while (getline(arquivo, linha)) {
+			stringstream ss(linha);
+			string conteudo;
+			planeta planeta;
+			
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.id = stoi(conteudo);
 
-		getline(ss, planeta.nome, SEPARADOR_CSV);
-		getline(ss, planeta.partido, SEPARADOR_CSV);
-		getline(ss, planeta.setor, SEPARADOR_CSV);
+			getline(ss, planeta.nome, SEPARADOR_CSV);
+			getline(ss, planeta.partido, SEPARADOR_CSV);
+			getline(ss, planeta.setor, SEPARADOR_CSV);
 
-		getline(ss, conteudo, SEPARADOR_CSV);
-		planeta.localizacao.x = stoi(conteudo);
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.localizacao.x = stoi(conteudo);
 
-		getline(ss, conteudo, SEPARADOR_CSV);
-		planeta.localizacao.y = stoi(conteudo);
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.localizacao.y = stoi(conteudo);
 
+			imprimirMarcador();
+			imprimirPlaneta(planeta);
+		}
 		imprimirMarcador();
-		imprimirPlaneta(planeta);
+		arquivo.close();
+	} else {
+		cout << "Por favor insira planetas." << endl;
 	}
-	imprimirMarcador();
-
-	arquivo.close();
 }
 
 int main(){
