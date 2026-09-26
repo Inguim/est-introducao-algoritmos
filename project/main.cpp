@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <time.h>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ struct planeta {
 };
 
 const string NOME_ARQUIVO_DADOS = "dados.csv";
+const char SEPARADOR_CSV = ';';
 
 // Funçoes utilitárias
 
@@ -44,6 +46,12 @@ int gerarIdentificador() {
     return time(NULL);
 }
 
+void imprimirPlaneta(planeta &planeta) {
+    cout << planeta.id << " - " << planeta.nome << endl;
+	cout << "Partido: " << planeta.partido << endl;
+	cout << "Setor: " << planeta.setor << " " << planeta.localizacao.x << "'" << planeta.localizacao.y << endl;
+}
+
 // Funções para lidar com arquivos
 
 void salvarPlaneta(planeta &planeta) {
@@ -52,9 +60,9 @@ void salvarPlaneta(planeta &planeta) {
     // ios:app -> adiciona ao final do arquivo
     ofstream arquivo(NOME_ARQUIVO_DADOS, ios::app);
 
-    arquivo << planeta.id << "," << planeta.nome << ",";
-    arquivo << planeta.partido << "," << planeta.setor << ",";
-    arquivo << planeta.localizacao.x << "," << planeta.localizacao.y;
+    arquivo << planeta.id << SEPARADOR_CSV << planeta.nome << SEPARADOR_CSV;
+    arquivo << planeta.partido << SEPARADOR_CSV << planeta.setor << SEPARADOR_CSV;
+    arquivo << planeta.localizacao.x << SEPARADOR_CSV << planeta.localizacao.y;
     arquivo << endl;
 
     arquivo.close();
@@ -97,6 +105,36 @@ void adicionarPlaneta(){
 	imprimirMarcador();
 }
 
+void listarPlanetas() {
+	ifstream arquivo(NOME_ARQUIVO_DADOS);
+	string linha;
+
+	while (getline(arquivo, linha)) {
+		stringstream ss(linha);
+		string conteudo;
+		planeta planeta;
+		
+		getline(ss, conteudo, SEPARADOR_CSV);
+		planeta.id = stoi(conteudo);
+
+		getline(ss, planeta.nome, SEPARADOR_CSV);
+		getline(ss, planeta.partido, SEPARADOR_CSV);
+		getline(ss, planeta.setor, SEPARADOR_CSV);
+
+		getline(ss, conteudo, SEPARADOR_CSV);
+		planeta.localizacao.x = stoi(conteudo);
+
+		getline(ss, conteudo, SEPARADOR_CSV);
+		planeta.localizacao.y = stoi(conteudo);
+
+		imprimirMarcador();
+		imprimirPlaneta(planeta);
+	}
+	imprimirMarcador();
+
+	arquivo.close();
+}
+
 int main(){
 	int operacao;
 	bool operando = true;
@@ -121,14 +159,16 @@ int main(){
 				// Alterar planeta
 				break;
 			case 5:
-				// Listar planetas
+				limparTela(false);
+				listarPlanetas();
 				break;
 			case 6: 
-				limparTela();
+				limparTela(false);
 				cout << "Sistema finalizado" << endl;
 				operando = false;
+				break;
 			default: 
-				limparTela();
+				limparTela(false);
 				cout << "Opção inválida" << endl;
 				break;
 		}
