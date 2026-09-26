@@ -1,2 +1,8 @@
+# ignorar arquivos sem extensão
+*
+!*/
+!*.*
+
 .vscode
 /*/*.txt
+/project/*.csv
