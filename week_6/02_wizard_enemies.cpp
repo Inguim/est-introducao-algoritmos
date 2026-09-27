@@ -21,7 +21,7 @@ int main() {
         cin >> vet[i];
     }
 
-    while (isKilling) {
+    do {
         isKilling = false;
         for (int i = 0; i < 10; i++) {
             vet[i]--;
@@ -31,7 +31,7 @@ int main() {
             }
         }
         
-    }
+    } while (isKilling);
 
     cout << enemiesKilled << endl;
     return 0;
