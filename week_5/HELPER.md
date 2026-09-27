@@ -1,6 +1,6 @@
 # 📚 Semana 5
 
-> **Objetivo:** Laços de Repetição
+> **Objetivo:** Modularização
 
 Os exercícios desta semana têm como objetivo principal **modularização**, .
 
@@ -8,6 +8,7 @@ Nesta etapa, o foco está em desenvolver familiaridade com:
 
 - Subprogramas (funções);
 - Passagem e tipagem de parâmetros;
+- Passagem de parâmetros por valor e referência;
 - Tipagem correta de retorno de função;
 - Lógica intermediária e avançada;
 
