@@ -1,4 +1,4 @@
-# 📚 Semana 5 (ainda em produção)
+# 📚 Semana 5
 
 > **Objetivo:** Laços de Repetição
 
