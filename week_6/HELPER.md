@@ -61,7 +61,7 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 | 11  | `14_moda.cpp`            |  🟡 **Médio**  |
 | 12  | `08_replacement.cpp`     |  🟡 **Médio**  |
 | 13  | `09_reverse_avg.cpp`     |  🟡 **Médio**  |
-| 14  | `--------------------`   | 🔴 **Difícil** |
+| 14  | `16_inversion.cpp`       | 🔴 **Difícil** |
 | 15  | `--------------------`   | 🔴 **Difícil** |
 | 16  | `--------------------`   | 🔴 **Difícil** |
 | 17  | `--------------------`   | 🔴 **Difícil** |
