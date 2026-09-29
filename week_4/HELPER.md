@@ -2,7 +2,7 @@
 
 > **Objetivo:** Laços de Repetição
 
-Os exercícios desta semana têm como objetivo principal **utilização de laços de repetição**, .
+Os exercícios desta semana têm como objetivo principal **utilização de laços de repetição**.
 
 Nesta etapa, o foco está em desenvolver familiaridade com:
 

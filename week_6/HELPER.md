@@ -2,7 +2,7 @@
 
 > **Objetivo:** Vetores
 
-Os exercícios desta semana têm como objetivo principal **vetores**, .
+Os exercícios desta semana têm como objetivo principal **vetores**.
 
 Nesta etapa, o foco está em desenvolver familiaridade com:
 

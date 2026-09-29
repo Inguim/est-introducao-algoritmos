@@ -2,7 +2,7 @@
 
 > **Objetivo:** Matrizes (Em produção)
 
-Os exercícios desta semana têm como objetivo principal **matrizes**, .
+Os exercícios desta semana têm como objetivo principal **matrizes**.
 
 Nesta etapa, o foco está em desenvolver familiaridade com:
 

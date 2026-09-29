@@ -2,7 +2,7 @@
 
 > **Objetivo:** Modularização
 
-Os exercícios desta semana têm como objetivo principal **modularização**, .
+Os exercícios desta semana têm como objetivo principal **modularização**.
 
 Nesta etapa, o foco está em desenvolver familiaridade com:
 
