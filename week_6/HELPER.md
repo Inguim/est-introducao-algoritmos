@@ -35,15 +35,6 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 
 ---
 
-# Fogem do escopo
-
-|  #  | Exercício | Contexto |
-| :-: | --------- | :------: |
-|  1  | `.cpp`    | Estudos  |
-|  1  | `.cpp`    | Estudos  |
-
----
-
 # 🧭 Ordem Recomendada (Estudos)
 
 |  #  | Exercício                |  Dificuldade   |
