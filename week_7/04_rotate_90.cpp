@@ -53,6 +53,13 @@ int main() {
         }
     }
 
+    // // Abordagem usando formula 
+    // for (i = 0; i < ROW; i++) {
+    //     for (j = 0; j < COL; j++) {
+    //         rotated[j][ROW - 1 - i] = m[i][j];
+    //     }
+    // }
+
     for (i = 0; i < ROW; i++) {
         for (j = 0; j < COL; j++) {
             cout << rotated[i][j] << " ";
