@@ -44,10 +44,13 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 ---
 
 01_battleship (facil)
-04_rotation (facil)
+06_minimax (facil)
+04_rotate_180 (facil)
+08_rotate_90 (facil)
 02_routine (medio)
 02_sales (medio)
 05_finding_pokemons (dificil)
+09_chess (dificil)
 
 # 🧭 Ordem Recomendada (Estudos)
 
