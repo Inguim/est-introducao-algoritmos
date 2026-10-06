@@ -123,10 +123,10 @@ void listarPlanetas() {
 			getline(ss, planeta.setor, SEPARADOR_CSV);
 
 			getline(ss, conteudo, SEPARADOR_CSV);
-			planeta.localizacao.x = stoi(conteudo);
+			planeta.localizacao.x = stof(conteudo);
 
 			getline(ss, conteudo, SEPARADOR_CSV);
-			planeta.localizacao.y = stoi(conteudo);
+			planeta.localizacao.y = stof(conteudo);
 
 			imprimirMarcador();
 			imprimirPlaneta(planeta);
