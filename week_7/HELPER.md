@@ -1,6 +1,6 @@
 # 📚 Semana 7
 
-> **Objetivo:** Matrizes (Em produção)
+> **Objetivo:** Matrizes
 
 Os exercícios desta semana têm como objetivo principal **matrizes**.
 
@@ -43,33 +43,24 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 
 ---
 
-01_battleship (facil)
-06_minimax (facil)
-04_rotate_180 (facil)
-08_rotate_90 (facil)
-02_routine (medio)
-02_sales (medio)
-05_finding_pokemons (dificil)
-09_chess (dificil)
-
 # 🧭 Ordem Recomendada (Estudos)
 
-|  #  | Exercício              |  Dificuldade   |
-| :-: | ---------------------- | :------------: |
-|  1  | `.cpp`                 |  🟢 **Fácil**  |
-|  2  | `.cpp`                 |  🟢 **Fácil**  |
-|  3  | `.cpp`                 |  🟢 **Fácil**  |
-|  4  | `.cpp`                 |  🟢 **Fácil**  |
-|  5  | `.cpp`                 |  🟢 **Fácil**  |
-|  6  | `.cpp`                 |  🟢 **Fácil**  |
-|  7  | `.cpp`                 |  🟢 **Fácil**  |
-|  8  | `.cpp`                 |  🟢 **Fácil**  |
-|  9  | `.cpp`                 |  🟢 **Fácil**  |
-| 10  | `.cpp`                 |  🟡 **Médio**  |
-| 11  | `.cpp`                 |  🟡 **Médio**  |
-| 12  | `.cpp`                 |  🟡 **Médio**  |
-| 13  | `.cpp`                 |  🟡 **Médio**  |
-| 14  | `.cpp`                 |  🟡 **Médio**  |
-| 15  | `.cpp`                 | 🔴 **Difícil** |
-| 16  | `--------------------` | 🔴 **Difícil** |
-| 17  | `--------------------` | 🔴 **Difícil** |
+|  #  | Exercício                 |  Dificuldade   |
+| :-: | ------------------------- | :------------: |
+|  1  | `01_battleship.cpp`       |  🟢 **Fácil**  |
+|  2  | `06_minimax.cpp`          |  🟢 **Fácil**  |
+|  3  | `04_rotate_180.cpp`       |  🟢 **Fácil**  |
+|  4  | `08_rotate_90.cpp`        |  🟢 **Fácil**  |
+|  5  | `02_routine.cpp`          |  🟡 **Médio**  |
+|  6  | `02_sales.cpp`            |  🟡 **Médio**  |
+|  7  | `05_finding_pokemons.cpp` | 🔴 **Difícil** |
+|  8  | `09_chess.cpp`            | 🔴 **Difícil** |
+|  9  | `--------------------`    | 🔴 **Difícil** |
+| 10  | `--------------------`    | 🔴 **Difícil** |
+| 11  | `--------------------`    | 🔴 **Difícil** |
+| 12  | `--------------------`    | 🔴 **Difícil** |
+| 13  | `--------------------`    | 🔴 **Difícil** |
+| 14  | `--------------------`    | 🔴 **Difícil** |
+| 15  | `--------------------`    | 🔴 **Difícil** |
+| 16  | `--------------------`    | 🔴 **Difícil** |
+| 17  | `--------------------`    | 🔴 **Difícil** |
