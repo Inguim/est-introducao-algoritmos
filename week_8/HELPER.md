@@ -41,6 +41,7 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 
 ---
 
+03_letter (facil)
 02_closest_word (facil)
 
 # 🧭 Ordem Recomendada (Estudos)
