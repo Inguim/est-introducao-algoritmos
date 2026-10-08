@@ -14,6 +14,9 @@
 // ialg
 // Exemplo de Saída:
 // 2
+// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
+// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
+// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
 #include <iostream>
 #include <string>
 #include <cmath>
