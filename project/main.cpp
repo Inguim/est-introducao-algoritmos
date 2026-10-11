@@ -51,6 +51,51 @@ void imprimirPlaneta(planeta &planeta) {
 	cout << "Partido: " << planeta.partido << endl;
 	cout << "Setor: " << planeta.setor << " " << planeta.localizacao.x << "'" << planeta.localizacao.y << endl;
 }
+ 
+// aumenta o tamanho do vetor (alocação dinâmica)
+void redimensionar(planeta* &vetor, int &capacidade) {
+	planeta *novoVetor = new planeta[capacidade + 5];
+
+	for (int i = 0; i < capacidade; i++) {
+		novoVetor[i] = vetor[i];
+	}
+
+	delete[] vetor;
+	vetor = novoVetor;
+	capacidade += 5;
+}
+
+void inicializar(planeta* &planetas, int &tam, int &capacidade) {
+	ifstream arquivo(NOME_ARQUIVO_DADOS);
+	string linha;
+
+	if (arquivo) {
+		while (getline(arquivo, linha)) {
+			stringstream ss(linha);
+			string conteudo;
+			planeta planeta;
+			
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.id = stoi(conteudo);
+
+			getline(ss, planeta.nome, SEPARADOR_CSV);
+			getline(ss, planeta.partido, SEPARADOR_CSV);
+			getline(ss, planeta.setor, SEPARADOR_CSV);
+
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.localizacao.x = stof(conteudo);
+
+			getline(ss, conteudo, SEPARADOR_CSV);
+			planeta.localizacao.y = stof(conteudo);
+
+			planetas[tam] = planeta;
+			tam++;
+
+			if (tam >= capacidade) redimensionar(planetas, capacidade);
+		}
+		arquivo.close();
+	}
+}
 
 // Funções para lidar com arquivos
 
@@ -105,42 +150,22 @@ void adicionarPlaneta(){
 	imprimirMarcador();
 }
 
-void listarPlanetas() {
-	ifstream arquivo(NOME_ARQUIVO_DADOS);
-	string linha;
-
-	if (arquivo) {
-		while (getline(arquivo, linha)) {
-			stringstream ss(linha);
-			string conteudo;
-			planeta planeta;
-			
-			getline(ss, conteudo, SEPARADOR_CSV);
-			planeta.id = stoi(conteudo);
-
-			getline(ss, planeta.nome, SEPARADOR_CSV);
-			getline(ss, planeta.partido, SEPARADOR_CSV);
-			getline(ss, planeta.setor, SEPARADOR_CSV);
-
-			getline(ss, conteudo, SEPARADOR_CSV);
-			planeta.localizacao.x = stof(conteudo);
-
-			getline(ss, conteudo, SEPARADOR_CSV);
-			planeta.localizacao.y = stof(conteudo);
-
-			imprimirMarcador();
-			imprimirPlaneta(planeta);
-		}
+void listarPlanetas(planeta planetas[], int tam) {
+	for (int i = 0; i < tam; i++) {
 		imprimirMarcador();
-		arquivo.close();
-	} else {
-		cout << "Por favor insira planetas." << endl;
+		imprimirPlaneta(planetas[i]);
 	}
+	imprimirMarcador();
 }
 
 int main(){
+	int tamanho = 0;
+	int capacidade = 10;
+	planeta *planetas = new planeta[capacidade];
 	int operacao;
 	bool operando = true;
+
+	inicializar(planetas, tamanho, capacidade);
 	
 	while (operando) {
 		mostrarOpcoes();
@@ -163,7 +188,7 @@ int main(){
 				break;
 			case 5:
 				limparTela(false);
-				listarPlanetas();
+				listarPlanetas(planetas, tamanho);
 				break;
 			case 6: 
 				limparTela(false);
