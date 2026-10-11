@@ -115,7 +115,7 @@ void salvarPlaneta(planeta &planeta) {
 
 // Funções de escopo
 
-void adicionarPlaneta(){
+void adicionarPlaneta(planeta planetas[],int &tam, int &capacidade){
 	planeta planeta;
 	int opcao;
 	
@@ -143,6 +143,10 @@ void adicionarPlaneta(){
 	cin >> planeta.localizacao.x >> planeta.localizacao.y;
 
     salvarPlaneta(planeta);
+
+	if (tam >= capacidade) redimensionar(planetas, capacidade);
+	planetas[tam] = planeta;
+	tam++;
 	
     limparTela();
 	cout << "Planeta adicionado aos registros" << endl;
@@ -175,7 +179,7 @@ int main(){
 		switch (operacao) {
 			case 1:
 				limparTela();
-				adicionarPlaneta();
+				adicionarPlaneta(planetas, tamanho, capacidade);
 				break;
 			case 2: 
 				// Buscar planeta
