@@ -205,6 +205,7 @@ int main(){
 				break;
 		}
 	}
-	
+
+	delete[] planetas;
 	return 0;
 }
