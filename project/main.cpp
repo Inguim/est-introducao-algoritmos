@@ -51,7 +51,23 @@ void imprimirPlaneta(planeta &planeta) {
 	cout << "Partido: " << planeta.partido << endl;
 	cout << "Setor: " << planeta.setor << " " << planeta.localizacao.x << "'" << planeta.localizacao.y << endl;
 }
- 
+
+// Ordena com Selection Sort
+void ordenarASCID(planeta planetas[], int tam){
+	int menor;
+	planeta aux;
+
+	for (int i = 0; i < tam - 1; i++) {
+		menor = i;
+		for (int j = i + 1; j < tam; j++) {
+			if (planetas[j].id < planetas[menor].id) menor = j;
+		}
+		aux = planetas[i];
+		planetas[i] = planetas[menor];
+		planetas[menor] = aux;
+	}
+}
+
 // aumenta o tamanho do vetor (alocação dinâmica)
 void redimensionar(planeta* &vetor, int &capacidade) {
 	planeta *novoVetor = new planeta[capacidade + 5];
@@ -97,6 +113,24 @@ void inicializar(planeta* &planetas, int &tam, int &capacidade) {
 	}
 }
 
+void finalizar(planeta* &planetas, int &tam) {
+	ofstream arquivo(NOME_ARQUIVO_DADOS);
+	string linha;
+	planeta planeta;
+
+	ordenarASCID(planetas, tam);
+
+	for (int i = 0; i < tam; i++) {
+		planeta = planetas[i];
+		arquivo << planeta.id << SEPARADOR_CSV << planeta.nome << SEPARADOR_CSV;
+		arquivo << planeta.partido << SEPARADOR_CSV << planeta.setor << SEPARADOR_CSV;
+		arquivo << planeta.localizacao.x << SEPARADOR_CSV << planeta.localizacao.y;
+		arquivo << endl;
+	}
+	
+	arquivo.close();
+}
+
 // Funções para lidar com arquivos
 
 void salvarPlaneta(planeta &planeta) {
@@ -115,7 +149,7 @@ void salvarPlaneta(planeta &planeta) {
 
 // Funções de escopo
 
-void adicionarPlaneta(planeta planetas[],int &tam, int &capacidade){
+void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	planeta planeta;
 	int opcao;
 	
@@ -155,6 +189,7 @@ void adicionarPlaneta(planeta planetas[],int &tam, int &capacidade){
 }
 
 void listarPlanetas(planeta planetas[], int tam) {
+	ordenarASCID(planetas, tam);
 	for (int i = 0; i < tam; i++) {
 		imprimirMarcador();
 		imprimirPlaneta(planetas[i]);
@@ -196,6 +231,7 @@ int main(){
 				break;
 			case 6: 
 				limparTela(false);
+				finalizar(planetas, tamanho);
 				cout << "Sistema finalizado" << endl;
 				operando = false;
 				break;
