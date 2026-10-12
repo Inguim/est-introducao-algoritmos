@@ -88,6 +88,28 @@ int buscarPeloID(planeta planetas[], int tam, int id) {
     return indexPlaneta;
 }
 
+// Busca Binária Nome
+int buscarPeloNome(planeta planetas[], int tam, string nome) {
+    int indexPlaneta = -1;
+    int inicio = 0, fim = tam - 1;
+    int meio;
+	bool contemONome = false;
+
+    while (inicio <= fim) {
+        meio = (inicio + fim) / 2;
+		contemONome = planetas[meio].nome.find(nome) != string::npos;
+        if (nome == planetas[meio].nome or contemONome) {
+            indexPlaneta = meio;
+            inicio = fim + 1;
+        } else {
+            if (nome > planetas[meio].nome) inicio = meio + 1;
+            else fim = meio - 1;
+        }
+    }
+    
+    return indexPlaneta;
+}
+
 // aumenta o tamanho do vetor (alocação dinâmica)
 void redimensionar(planeta* &vetor, int &capacidade) {
 	planeta *novoVetor = new planeta[capacidade + 5];
@@ -223,6 +245,15 @@ void buscarPlaneta(planeta planetas[], int &tam) {
 			index = buscarPeloID(planetas, tam, id);
 			limparTela();
 		break;
+
+		case 2: {
+			string nome;
+			cout << "Informe o nome do planeta: ";
+    		cin >> nome;
+			index = buscarPeloNome(planetas, tam, nome);
+			limparTela();
+		}
+		break;
 	
 		default:
 			limparTela();
@@ -231,7 +262,7 @@ void buscarPlaneta(planeta planetas[], int &tam) {
 			break;
 	}
 
-    if (modo == 1) {
+    if (modo == 1 or modo == 2) {
 		if (index != -1) imprimirPlaneta(planetas[index]);
 		else cout << "Planeta não encontrado" << endl;
 		imprimirMarcador();
