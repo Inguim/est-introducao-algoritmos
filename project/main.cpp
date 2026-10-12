@@ -10,6 +10,7 @@ struct coordenada {
     float x;
 	float y;
 };
+
 struct planeta {
     int id;
     string nome;
@@ -123,6 +124,24 @@ void redimensionar(planeta* &vetor, int &capacidade) {
 	capacidade += 5;
 }
 
+// remove e diminui o tamnho do vetor
+void remover(planeta* &planetas, int &tam, int &capacidade, int index) {
+	planeta *novoVetor = new planeta[capacidade];
+
+	int j = 0;
+    for (int i = 0; i < tam; i++) {
+        if (i != index) {
+            novoVetor[j] = planetas[i];
+            j++;
+        }
+    }
+	
+	delete[] planetas;
+	planetas = novoVetor;
+	tam--;
+}
+
+// busca informações do csv
 void inicializar(planeta* &planetas, int &tam, int &capacidade) {
 	ifstream arquivo(NOME_ARQUIVO_DADOS);
 	string linha;
@@ -155,6 +174,7 @@ void inicializar(planeta* &planetas, int &tam, int &capacidade) {
 	}
 }
 
+// salva todos os planetas no csv
 void finalizar(planeta* &planetas, int &tam) {
 	ofstream arquivo(NOME_ARQUIVO_DADOS);
 	string linha;
@@ -278,6 +298,23 @@ void buscarPlaneta(planeta planetas[], int &tam) {
 	}
 }
 
+void removerPlaneta(planeta* &planetas, int &tam, int &capacidade) {
+	int id;
+
+	cout << "Informe o ID do planeta: ";
+	cin >> id;
+
+	ordenarASCID(planetas, tam);
+	int indexPlaneta = buscarPeloID(planetas, tam, id);
+	
+	limparTela();
+	if (indexPlaneta != -1) {
+		remover(planetas, tam, capacidade, indexPlaneta);
+		cout << "Planeta removido!" << endl;
+	} else cout << "Planeta não encontrado" << endl;
+	imprimirMarcador();
+}
+
 void listarPlanetas(planeta planetas[], int tam) {
 	ordenarASCID(planetas, tam);
 	for (int i = 0; i < tam; i++) {
@@ -310,7 +347,7 @@ int main(){
 				buscarPlaneta(planetas, tamanho);
 				break;
 			case 3:
-				// Remover planeta
+				removerPlaneta(planetas, tamanho, capacidade);
 				break;
 			case 4:
 				// Alterar planeta
