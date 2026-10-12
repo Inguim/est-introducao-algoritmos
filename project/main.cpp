@@ -193,21 +193,30 @@ void salvarPlaneta(planeta &planeta) {
 
 void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	planeta planeta;
-	int opcao;
+	int opcao = -1;
 	
 	cout << "Informe o nome do Planeta (não utilize espaço ou ponto-vírgula): ";
 	cin >> planeta.nome;
 	
 	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
 	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
 	if (opcao == 1) {
 		planeta.setor = "Setor A";
 	} else {
 		planeta.setor = "Setor B";
 	}
 	
+	
 	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
 	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
 	if (opcao == 1) {
 		planeta.partido = "República";
 	} else {
