@@ -68,6 +68,26 @@ void ordenarASCID(planeta planetas[], int tam){
 	}
 }
 
+// Busca Binária ID
+int buscarPeloID(planeta planetas[], int tam, int id) {
+    int indexPlaneta = -1;
+    int inicio = 0, fim = tam - 1;
+    int meio;
+
+    while (inicio <= fim) {
+        meio = (inicio + fim) / 2;
+        if (id == planetas[meio].id) {
+            indexPlaneta = meio;
+            inicio = fim + 1;
+        } else {
+            if (id > planetas[meio].id) inicio = meio + 1;
+            else fim = meio - 1;
+        }
+    }
+    
+    return indexPlaneta;
+}
+
 // aumenta o tamanho do vetor (alocação dinâmica)
 void redimensionar(planeta* &vetor, int &capacidade) {
 	planeta *novoVetor = new planeta[capacidade + 5];
@@ -188,6 +208,36 @@ void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	imprimirMarcador();
 }
 
+void buscarPlaneta(planeta planetas[], int &tam) {
+    int modo;
+    int index = -1;
+
+	cout << "Informe o modo de busca: " << endl << "1 - ID" << endl << "2 - NOME" << endl;
+	cin >> modo;
+
+	switch (modo) {
+		case 1:
+			int id;
+			cout << "Informe o código do planeta: ";
+    		cin >> id;
+			index = buscarPeloID(planetas, tam, id);
+			limparTela();
+		break;
+	
+		default:
+			limparTela();
+			cout << "Operação inválida" << endl;
+			imprimirMarcador();
+			break;
+	}
+
+    if (modo == 1) {
+		if (index != -1) imprimirPlaneta(planetas[index]);
+		else cout << "Planeta não encontrado" << endl;
+		imprimirMarcador();
+	}
+}
+
 void listarPlanetas(planeta planetas[], int tam) {
 	ordenarASCID(planetas, tam);
 	for (int i = 0; i < tam; i++) {
@@ -217,7 +267,7 @@ int main(){
 				adicionarPlaneta(planetas, tamanho, capacidade);
 				break;
 			case 2: 
-				// Buscar planeta
+				buscarPlaneta(planetas, tamanho);
 				break;
 			case 3:
 				// Remover planeta
