@@ -211,9 +211,9 @@ int main(){
 		
 		cin >> operacao;
 		
+		limparTela(false);
 		switch (operacao) {
 			case 1:
-				limparTela();
 				adicionarPlaneta(planetas, tamanho, capacidade);
 				break;
 			case 2: 
@@ -226,17 +226,14 @@ int main(){
 				// Alterar planeta
 				break;
 			case 5:
-				limparTela(false);
 				listarPlanetas(planetas, tamanho);
 				break;
 			case 6: 
-				limparTela(false);
 				finalizar(planetas, tamanho);
 				cout << "Sistema finalizado" << endl;
 				operando = false;
 				break;
 			default: 
-				limparTela(false);
 				cout << "Opção inválida" << endl;
 				break;
 		}
