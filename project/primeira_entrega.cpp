@@ -1,3 +1,11 @@
+/* Membros do Grupo
+ 
+ * Igor Azevedo
+ * Paulo Matheus
+ * 
+ * Tema: Localizador de Planetas Star Wars 
+ */
+
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
