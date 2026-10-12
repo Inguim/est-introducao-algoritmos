@@ -243,8 +243,9 @@ void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	planeta planeta;
 	int opcao = -1;
 	
-	cout << "Informe o nome do Planeta (ponto-vírgula): ";
-	cin >> planeta.nome;
+	cout << "Informe o nome do Planeta: ";
+	cin.ignore();
+	getline(cin, planeta.nome);
 	
 	planeta.setor = informarSetor();
 	planeta.partido = informarPartido();
@@ -321,6 +322,62 @@ void removerPlaneta(planeta* &planetas, int &tam, int &capacidade) {
 	imprimirMarcador();
 }
 
+void alterarPlaneta(planeta* &planetas, int &tam){
+	int id, indexPlaneta;
+	
+	cout << "Informe o ID do planeta: ";
+	cin >> id;
+
+	indexPlaneta = buscarPeloID(planetas, tam , id);
+	
+	limparTela();
+	if (indexPlaneta != -1) {
+		planeta planeta = planetas[indexPlaneta];
+		string entrada;
+		int opcao = -1;
+
+		cout << "Nome atual: " << planeta.nome << endl;
+		cout << "Informe o nome do Planeta (ou aperte Enter para manter): ";
+		cin.ignore();
+		getline(cin, entrada);
+		if (! entrada.empty()) planeta.nome = entrada;
+	
+		cout << "Deseja alterar o setor (1-sim/2-não): " << planeta.setor << " ";
+		cin >> opcao;
+		if (opcao == 1) {
+			planeta.setor = informarSetor();
+		}
+
+		cout << "Deseja alterar o partido  (1-sim/2-não): " << planeta.partido << " ";
+		cin >> opcao;
+		if (opcao == 1) {
+			planeta.partido = informarPartido();
+		}
+		
+		cout << "Localização atual: " << planeta.localizacao.x << "'" << planeta.localizacao.y << endl;
+		cout << "Informe a localização dentro do setor (x:y) ou aperte Enter para manter" << endl;
+		cout << "Apenas número inteiros e separe por espaços" << endl;
+		cin.ignore();
+		getline(cin, entrada);
+		if (not entrada.empty()) {
+			stringstream ss(entrada);
+			float x, y;
+
+			if (ss >> x >> y) {
+				planeta.localizacao.x = x;
+				planeta.localizacao.y = y;
+			}
+		}
+
+		planetas[indexPlaneta] = planeta;
+		
+		limparTela();
+		cout << "Planeta atualizado nos registros" << endl;
+		cout << "Código: " << planeta.id << endl; 
+	} else cout << "Planeta não encontrado" << endl;
+	imprimirMarcador();
+}
+
 void listarPlanetas(planeta planetas[], int tam) {
 	ordenarASCID(planetas, tam);
 	for (int i = 0; i < tam; i++) {
@@ -356,7 +413,7 @@ int main(){
 				removerPlaneta(planetas, tamanho, capacidade);
 				break;
 			case 4:
-				// Alterar planeta
+				alterarPlaneta(planetas, tamanho);
 				break;
 			case 5:
 				listarPlanetas(planetas, tamanho);
