@@ -31,7 +31,7 @@ void mostrarOpcoes() {
 	cout << "3 - Remover planeta" << endl;
 	cout << "4 - Alterar planeta" << endl;
 	cout << "5 - Listar planetas" << endl;
-	cout << "6 - Sair" << endl;
+	cout << "6 - Sair e Salvar" << endl;
 }
 
 void imprimirMarcador() {
@@ -124,7 +124,7 @@ void redimensionar(planeta* &vetor, int &capacidade) {
 	capacidade += 5;
 }
 
-// remove e diminui o tamnho do vetor
+// remove e diminui o tamanho do vetor
 void remover(planeta* &planetas, int &tam, int &capacidade, int index) {
 	planeta *novoVetor = new planeta[capacidade];
 
@@ -193,6 +193,34 @@ void finalizar(planeta* &planetas, int &tam) {
 	arquivo.close();
 }
 
+string informarSetor() {
+	int opcao;
+	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
+	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
+	if (opcao == 1) {
+		return "Setor A";
+	}
+	return "Setor B";
+}
+
+string informarPartido() {
+	int opcao;
+	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
+	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
+	if (opcao == 1) {
+		return "República";
+	} 
+	return "Separatista";
+}
+
 // Funções para lidar com arquivos
 
 void salvarPlaneta(planeta &planeta) {
@@ -215,33 +243,11 @@ void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	planeta planeta;
 	int opcao = -1;
 	
-	cout << "Informe o nome do Planeta (não utilize espaço ou ponto-vírgula): ";
+	cout << "Informe o nome do Planeta (ponto-vírgula): ";
 	cin >> planeta.nome;
 	
-	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
-	cin >> opcao;
-	while (opcao != 1 and opcao != 2){
-		cout << "Opção inválida! Informe novamente (1 ou 2): ";
-		cin >> opcao;
-	}
-	if (opcao == 1) {
-		planeta.setor = "Setor A";
-	} else {
-		planeta.setor = "Setor B";
-	}
-	
-	
-	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
-	cin >> opcao;
-	while (opcao != 1 and opcao != 2){
-		cout << "Opção inválida! Informe novamente (1 ou 2): ";
-		cin >> opcao;
-	}
-	if (opcao == 1) {
-		planeta.partido = "República";
-	} else {
-		planeta.partido = "Separatista";
-	}
+	planeta.setor = informarSetor();
+	planeta.partido = informarPartido();
 	
 	cout << "Informe a localização dentro do setor (x:y)" << endl;
 	cout << "Apenas número inteiros e separe por espaços" << endl;
