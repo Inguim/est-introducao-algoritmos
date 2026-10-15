@@ -29,25 +29,24 @@ using namespace std;
 int main() {
     int N;
     int longest = 0;
-    size_t i, j;
     
     cin >> N;
 
     string words[N];
     string word;
 
-    for (i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         cin >> words[i];
         if (words[i].length() > longest) longest = words[i].length();
     }
 
-    for (i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         word = words[i];
-        for (j = 0; j < longest - word.length(); j++) {
+        for (unsigned j = 0; j < (longest - word.length()); j++) {
             cout << "*";
         }
 
-        for (j = 0; j < word.length(); j++) {
+        for (unsigned j = 0; j < word.length(); j++) {
             cout << word[j];
         }
         cout << endl;
