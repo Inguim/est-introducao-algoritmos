@@ -14,9 +14,6 @@
 // ialg
 // Exemplo de Saída:
 // 2
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -35,9 +32,9 @@ int main() {
     sizeWord = word.length();
 
     if (sizeWord <= sizePhrase) {
-        for (size_t lastIndex = 0; lastIndex <= abs(sizePhrase - sizeWord); lastIndex++) {
+        for (int lastIndex = 0; lastIndex <= abs(sizePhrase - sizeWord); lastIndex++) {
             finded = true;
-            for (size_t j = 0; j < sizeWord; j++){
+            for (int j = 0; j < sizeWord; j++){
                 if (word[j] != phrase[lastIndex + j]) {
                     finded = false;
                     j = sizeWord;
