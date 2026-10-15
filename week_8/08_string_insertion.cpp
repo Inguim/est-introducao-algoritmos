@@ -23,7 +23,7 @@ using namespace std;
 int main() {
     char final[201];
     string insert, into;
-    int where;
+    unsigned where;
     int k = 0;
 
     cin >> into >> where >> insert;
@@ -32,17 +32,17 @@ int main() {
         where = into.length();
     }
 
-    for (size_t i = 0; i < where; i++) {
+    for (int i = 0; i < where; i++) {
         final[k] = into[i];
         k++;
     }
 
-    for (size_t i = 0; i < insert.length(); i++) {
+    for (unsigned i = 0; i < insert.length(); i++) {
         final[k] = insert[i];
         k++;
     }
 
-    for (size_t i = where; i < into.length(); i++) {
+    for (unsigned i = where; i < into.length(); i++) {
         final[k] = into[i];
         k++;
     }
