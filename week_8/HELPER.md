@@ -1,6 +1,6 @@
 # 📚 Semana 7
 
-> **Objetivo:** String (Em andamento)
+> **Objetivo:** String
 
 Os exercícios desta semana têm como objetivo principal **strings**.
 
@@ -33,39 +33,25 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 
 ---
 
-# Fogem do escopo
-
-|  #  | Exercício | Contexto |
-| :-: | --------- | :------: |
-|  1  | `.cpp`    | Estudos  |
-
----
-
-05_parentheses_check (facil)
-04_without_letter (facil)
-03_letter (facil)
-02_closest_word (facil)
-06_substring (medio)
-
 # 🧭 Ordem Recomendada (Estudos)
 
-|  #  | Exercício              |  Dificuldade   |
-| :-: | ---------------------- | :------------: |
-|  1  | `.cpp`                 |  🟢 **Fácil**  |
-|  2  | `.cpp`                 |  🟢 **Fácil**  |
-|  3  | `.cpp`                 |  🟢 **Fácil**  |
-|  4  | `.cpp`                 |  🟢 **Fácil**  |
-|  5  | `.cpp`                 |  🟡 **Médio**  |
-|  6  | `.cpp`                 |  🟡 **Médio**  |
-|  7  | `.cpp`                 | 🔴 **Difícil** |
-|  8  | `.cpp`                 | 🔴 **Difícil** |
-|  9  | `--------------------` | 🔴 **Difícil** |
-| 10  | `--------------------` | 🔴 **Difícil** |
-| 11  | `--------------------` | 🔴 **Difícil** |
-| 12  | `--------------------` | 🔴 **Difícil** |
-| 13  | `--------------------` | 🔴 **Difícil** |
-| 14  | `--------------------` | 🔴 **Difícil** |
-| 15  | `--------------------` | 🔴 **Difícil** |
-| 16  | `--------------------` | 🔴 **Difícil** |
-| 17  | `--------------------` | 🔴 **Difícil** |
-| 18  | `--------------------` | 🔴 **Difícil** |
+|  #  | Exercício                  |  Dificuldade   |
+| :-: | -------------------------- | :------------: |
+|  1  | `13_caesar_cipher.cpp`     |  🟢 **Fácil**  |
+|  2  | `16_muttley_hash.cpp`      |  🟢 **Fácil**  |
+|  3  | `17_joker_hash.cpp`        |  🟢 **Fácil**  |
+|  4  | `05_parentheses_check.cpp` |  🟢 **Fácil**  |
+|  5  | `04_without_letter.cpp`    |  🟢 **Fácil**  |
+|  6  | `12_justify_words.cpp`     |  🟢 **Fácil**  |
+|  7  | `03_letter.cpp`            |  🟢 **Fácil**  |
+|  8  | `11_most_repeated.cpp`     |  🟡 **Médio**  |
+|  9  | `14_not_repeated.cpp`      |  🟡 **Médio**  |
+| 10  | `18_gargamel_itens.cpp`    |  🟡 **Médio**  |
+| 11  | `02_closest_word.cpp`      |  🟡 **Médio**  |
+| 12  | `07_dna.cpp`               |  🟡 **Médio**  |
+| 13  | `10_formation_number.cpp`  |  🟡 **Médio**  |
+| 14  | `08_string_insertion.cpp`  |  🟡 **Médio**  |
+| 15  | `06_substring.cpp`         | 🔴 **Difícil** |
+| 16  | `15_caesar_cipher.cpp`     | 🔴 **Difícil** |
+| 17  | `09_sequencial_search.cpp` | 🔴 **Difícil** |
+| 18  | `--------------------`     | 🔴 **Difícil** |
