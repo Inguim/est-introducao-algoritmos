@@ -29,9 +29,6 @@
 // pegue aquele maldito pombo agora
 // Exemplo de Saída:
 // 8 7 4 5 6 30
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
-// OBS: OBTIVE APENAS 95% DE ACERTO NESSA RESOLUÇÃO
 #include <iostream>
 #include <string>
 
@@ -57,7 +54,7 @@ int main() {
 
     cin >> N;
 
-    for (size_t i = 0; i < N; i++){
+    for (int i = 0; i < N; i++){
         cin >> word;
         hash = hashWord(word);
         sum += hash;
