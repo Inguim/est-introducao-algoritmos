@@ -1,6 +1,6 @@
 # 📚 Semana 9
 
-> **Objetivo:** Recursão e busca binária (Em desenvolvimento)
+> **Objetivo:** Recursão e busca binária
 
 Os exercícios desta semana têm como objetivo principal **Recursão e busca binária**.
 
