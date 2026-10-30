@@ -88,6 +88,9 @@ int main() {
              << planets[i].troopers << " "
              << (planets[i].avgBattles / planets[i].troopers) << endl;
     }
+
+    delete[] troopers;
+    delete[] planets;
     
     return 0;
 }
