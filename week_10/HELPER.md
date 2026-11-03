@@ -1,6 +1,6 @@
 # 📚 Semana 10
 
-> **Objetivo:** Struct (Em desenvolvimento)
+> **Objetivo:** Struct
 
 Os exercícios desta semana têm como objetivo principal **Struct**.
 
@@ -33,21 +33,29 @@ A dificuldade dos exercícios é classificada de acordo com o nível de conhecim
 
 ---
 
+# Fogem do escopo
+
+|  #  | Exercício          | Contexto |
+| :-: | ------------------ | :------: |
+|  1  | `07_employees.cpp` | Estudos  |
+
+---
+
 # 🧭 Ordem Recomendada (Estudos)
 
 |  #  | Exercício                     |  Dificuldade   |
 | :-: | ----------------------------- | :------------: |
-|  1  | `.cpp`                        |  🟢 **Fácil**  |
-|  2  | `.cpp`                        |  🟢 **Fácil**  |
-|  3  | `.cpp`                        |  🟢 **Fácil**  |
-|  4  | `.cpp`                        |  🟢 **Fácil**  |
-|  5  | `.cpp`                        |  🟢 **Fácil**  |
-|  6  | `.cpp`                        |  🟡 **Médio**  |
-|  7  | `.cpp`                        |  🟡 **Médio**  |
-|  8  | `.cpp`                        |  🟡 **Médio**  |
-|  9  | `.cpp`                        |  🟡 **Médio**  |
-| 10  | `---------------------------` | 🔴 **Difícil** |
-| 11  | `---------------------------` | 🔴 **Difícil** |
+|  1  | `11_product_research.cpp`     |  🟢 **Fácil**  |
+|  2  | `06_higher_older.cpp`         |  🟢 **Fácil**  |
+|  3  | `02_older.cpp`                |  🟢 **Fácil**  |
+|  4  | `08_average.cpp`              |  🟢 **Fácil**  |
+|  5  | `03_average_sum.cpp`          |  🟢 **Fácil**  |
+|  6  | `05_geometric_shapes.cpp`     |  🟢 **Fácil**  |
+|  7  | `09_temp_employees.cpp`       |  🟢 **Fácil**  |
+|  8  | `04_muggings_gotham.cpp`      |  🟡 **Médio**  |
+|  9  | `10_stormtroopers.cpp`        |  🟡 **Médio**  |
+| 10  | `12_run.cpp`                  | 🔴 **Difícil** |
+| 11  | `07_employees.cpp`            | 🔴 **Difícil** |
 | 12  | `---------------------------` | 🔴 **Difícil** |
 | 13  | `---------------------------` | 🔴 **Difícil** |
 | 14  | `---------------------------` | 🔴 **Difícil** |
