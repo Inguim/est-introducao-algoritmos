@@ -115,7 +115,7 @@ int buscarPeloNome(planeta planetas[], int tam, string nome) {
 
 // aumenta o tamanho do vetor (alocação dinâmica)
 void redimensionar(planeta* &vetor, int &capacidade) {
-	planeta *novoVetor = new planeta[capacidade + 5];
+	planeta *novoVetor = new planeta[capacidade * 2];
 
 	for (int i = 0; i < capacidade; i++) {
 		novoVetor[i] = vetor[i];
@@ -123,7 +123,7 @@ void redimensionar(planeta* &vetor, int &capacidade) {
 
 	delete[] vetor;
 	vetor = novoVetor;
-	capacidade += 5;
+	capacidade *= 2;
 }
 
 // remove e diminui o tamanho do vetor
