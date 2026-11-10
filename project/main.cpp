@@ -22,7 +22,9 @@ struct planeta {
 const string NOME_ARQUIVO_DADOS = "dados.csv";
 const char SEPARADOR_CSV = ';';
 
+// ====================================
 // Funçoes utilitárias
+// ====================================
 
 void mostrarOpcoes() {
 	cout << "Bem vindo ao glossário de Planetas, informe uma operação:" << endl;
@@ -141,6 +143,52 @@ void remover(planeta* &planetas, int &tam, int &capacidade, int index) {
 	tam--;
 }
 
+string informarSetor() {
+	int opcao;
+	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
+	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
+	if (opcao == 1) {
+		return "Setor A";
+	}
+	return "Setor B";
+}
+
+string informarPartido() {
+	int opcao;
+	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
+	cin >> opcao;
+	while (opcao != 1 and opcao != 2){
+		cout << "Opção inválida! Informe novamente (1 ou 2): ";
+		cin >> opcao;
+	}
+	if (opcao == 1) {
+		return "República";
+	} 
+	return "Separatista";
+}
+
+// ====================================
+// Funções para lidar com arquivos
+// ====================================
+
+void salvarPlaneta(planeta &planeta) {
+    planeta.id = gerarIdentificador();
+
+    // ios:app -> adiciona ao final do arquivo
+    ofstream arquivo(NOME_ARQUIVO_DADOS, ios::app);
+
+    arquivo << planeta.id << SEPARADOR_CSV << planeta.nome << SEPARADOR_CSV;
+    arquivo << planeta.partido << SEPARADOR_CSV << planeta.setor << SEPARADOR_CSV;
+    arquivo << planeta.localizacao.x << SEPARADOR_CSV << planeta.localizacao.y;
+    arquivo << endl;
+
+    arquivo.close();
+}
+
 // busca informações do csv
 void inicializar(planeta* &planetas, int &tam, int &capacidade) {
 	ifstream arquivo(NOME_ARQUIVO_DADOS);
@@ -193,55 +241,12 @@ void finalizar(planeta* &planetas, int &tam) {
 	arquivo.close();
 }
 
-string informarSetor() {
-	int opcao;
-	cout << "Informe o setor:" << endl << "1 - Setor A" << endl << "2 - Setor B" << endl;
-	cin >> opcao;
-	while (opcao != 1 and opcao != 2){
-		cout << "Opção inválida! Informe novamente (1 ou 2): ";
-		cin >> opcao;
-	}
-	if (opcao == 1) {
-		return "Setor A";
-	}
-	return "Setor B";
-}
-
-string informarPartido() {
-	int opcao;
-	cout << "Selecione o partido:" << endl << "1 - República" << endl << "2 - Separatista" << endl;
-	cin >> opcao;
-	while (opcao != 1 and opcao != 2){
-		cout << "Opção inválida! Informe novamente (1 ou 2): ";
-		cin >> opcao;
-	}
-	if (opcao == 1) {
-		return "República";
-	} 
-	return "Separatista";
-}
-
-// Funções para lidar com arquivos
-
-void salvarPlaneta(planeta &planeta) {
-    planeta.id = gerarIdentificador();
-
-    // ios:app -> adiciona ao final do arquivo
-    ofstream arquivo(NOME_ARQUIVO_DADOS, ios::app);
-
-    arquivo << planeta.id << SEPARADOR_CSV << planeta.nome << SEPARADOR_CSV;
-    arquivo << planeta.partido << SEPARADOR_CSV << planeta.setor << SEPARADOR_CSV;
-    arquivo << planeta.localizacao.x << SEPARADOR_CSV << planeta.localizacao.y;
-    arquivo << endl;
-
-    arquivo.close();
-}
-
+// ====================================
 // Funções de escopo
+// ====================================
 
 void adicionarPlaneta(planeta planetas[], int &tam, int &capacidade){
 	planeta planeta;
-	int opcao = -1;
 	
 	cout << "Informe o nome do Planeta: ";
 	cin.ignore();
