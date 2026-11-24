@@ -70,4 +70,5 @@ int main() {
         if (i == 9) cout << endl;
     }
     
+    return 0;
 }
