@@ -3,44 +3,42 @@
 
 using namespace std;
 
-int particionaASC(int v[], int c, int f) { // c = começo, f = fim
-    int pivo = v[c], i = c+1, j = f;
-    while (i <= j) {
-        if (v[i] <= pivo) i++;
-        else if (pivo <= v[j]) j--;
-        else { // (v[i] > pivo) e (v[j] < pivo)
-            swap (v[i],v[j]);
-            i++;
-            j--;
+// metodo Lomuto
+int particionaASC(int v[], int inicio, int fim) {
+    int pivo = v[fim]; 
+    int fronteira = inicio;
+    int indice_atual;
+    for (indice_atual = inicio; indice_atual < fim; indice_atual++) {
+        if(v[indice_atual] <= pivo) {
+            swap(v[fronteira], v[indice_atual]);
+            fronteira++;
         }
-    } // agora i == j+1
-    v[c] = v[j];
-    v[j] = pivo;
-    return j; // retorna posição do pivô
+    }
+    swap(v[fronteira], v[fim]);
+    return fronteira;
+    
 }
 
-int particionaDESC(int v[], int c, int f) {
-    int pivo = v[c], i = c+1, j = f;
-    while (i <= j) {
-        if (v[i] >= pivo) i++;
-        else if (pivo >= v[j]) j--;
-        else { 
-            swap (v[i],v[j]);
-            i++;
-            j--;
+int particionaDESC(int v[], int inicio, int fim) {
+    int pivo = v[fim]; 
+    int fronteira = inicio;
+    int indice_atual;
+    for (indice_atual = inicio; indice_atual < fim; indice_atual++) {
+        if(v[indice_atual] >= pivo) {
+            swap(v[fronteira], v[indice_atual]);
+            fronteira++;
         }
-    } 
-    v[c] = v[j];
-    v[j] = pivo;
-    return j;
+    }
+    swap(v[fronteira], v[fim]);
+    return fronteira;
 }
 
-void sortASC(int a[], int pos_pivo, int fim) {
-    int pos_novo_pivo;
-    if (pos_pivo < fim) {
-        pos_novo_pivo = particionaASC(a, pos_pivo, fim);
-        sortASC(a, pos_pivo, pos_novo_pivo - 1);
-        sortASC(a, pos_novo_pivo + 1, fim);
+void sortASC(int a[], int inicio, int fim) {
+    int indice_pivo;
+    if (inicio < fim) {
+        indice_pivo = particionaASC(a, inicio, fim);
+        sortASC(a, inicio, indice_pivo - 1);
+        sortASC(a, indice_pivo + 1, fim);
     }
 }
 
