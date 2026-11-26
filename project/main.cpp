@@ -1,8 +1,10 @@
 #include <iostream>
-#include <cstdlib>
-#include <time.h>
+#include <cstdlib> // contém a função de clear
+#include <time.h> // contem a função time que retorna o tempo (1970) ate agora em segundos
 #include <fstream>
 #include <sstream>
+// stringstream semelhante ao cin e cout, porém na memoria
+// facilita manipular entradas e evitar o cin.ignore()
 
 using namespace std;
 
@@ -100,7 +102,7 @@ int buscarPeloNome(planeta planetas[], int tam, string nome) {
 
     while (inicio <= fim) {
         meio = (inicio + fim) / 2;
-		contemONome = planetas[meio].nome.find(nome) != string::npos;
+		contemONome = planetas[meio].nome.find(nome) != string::npos; // constante para indicar fim da string
         if (nome == planetas[meio].nome or contemONome) {
             indexPlaneta = meio;
             inicio = fim + 1;
